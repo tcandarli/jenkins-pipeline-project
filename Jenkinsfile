@@ -6,6 +6,7 @@ pipeline {
                 echo "Do not stop, work hard and reinvent yourself"
                 sh 'echo using shell within Jenkinsfile'
                 echo 'not using shell in the Jenkinsfile'
+                echo 'Updated Jenkinsfile to trigger the job'
             }
         }
     }
