@@ -1,13 +1,16 @@
 pipeline {
     agent any
     stages {
+        stage('build') {
+            steps {
+                echo 'Compiling the java source code'
+                sh 'javac Hello.java'
+            }
+        }
         stage('run') {
             steps {
-                echo 'Python is running in Jenkins!'
-                sh 'python --version'
-                sh 'python pipeline.py'
-                echo 'Checks github every minute!'
-
+                echo 'Running the compiled java code.'
+                sh 'java Hello'
             }
         }
     }
